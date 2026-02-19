@@ -1,0 +1,32 @@
+[package]
+name = "x402-core"
+version = "0.1.0"
+edition = "2021"
+description = "x402 Payment Protocol - Core library"
+license = "MIT"
+repository = "https://github.com/siddimore/x402-sdk"
+keywords = ["x402", "payments", "http", "cryptocurrency"]
+categories = ["cryptography", "web-programming"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# Ethereum primitives
+alloy-primitives = { version = "0.8", features = ["serde"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Error handling
+thiserror = "2.0"
+
+# Base64 encoding for headers
+base64 = "0.22"
+
+# Signature verification
+k256 = { version = "0.13", features = ["ecdsa"] }
+
+[dev-dependencies]
+hex = "0.4"
