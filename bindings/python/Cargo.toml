@@ -1,0 +1,24 @@
+[package]
+name = "x402-python"
+version = "0.1.0"
+edition = "2021"
+description = "Python bindings for x402 Payment Protocol"
+license = "MIT"
+
+[lib]
+name = "x402_native"
+crate-type = ["cdylib"]
+
+[dependencies]
+# Rust core
+x402-core = { path = "../../core" }
+
+# Python bindings - using abi3 for forward compatibility
+pyo3 = { version = "0.23", features = ["extension-module", "abi3-py39"] }
+
+# Ethereum primitives (for type conversions)
+alloy-primitives = { version = "0.8", features = ["serde"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
