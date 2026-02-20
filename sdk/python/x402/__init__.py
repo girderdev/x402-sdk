@@ -21,6 +21,7 @@ from x402.protocol import (
     encode_payment_header,
     decode_payment_header,
 )
+from x402.signer import Signer, LocalSigner, AWSKMSSigner
 
 __version__ = "0.1.0"
 
@@ -32,6 +33,10 @@ __all__ = [
     "SignedPayment",
     # Client
     "X402Client",
+    # Signers
+    "Signer",
+    "LocalSigner",
+    "AWSKMSSigner",
     # Verification
     "verify_payment",
     # Protocol

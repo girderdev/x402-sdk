@@ -9,8 +9,10 @@ The signer interface allows pluggable signing backends:
 
 from x402.signer.base import Signer
 from x402.signer.local import LocalSigner
+from x402.signer.aws_kms import AWSKMSSigner
 
 __all__ = [
     "Signer",
     "LocalSigner",
+    "AWSKMSSigner",
 ]
